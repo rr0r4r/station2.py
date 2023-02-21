@@ -1,29 +1,28 @@
-import random
+from random import randrange
 
-def num():
-    return random.randint(1, 6)
 def game():
-    pp = 0
-    while 1:
-        input("roll the dice...")
-        dice1 = num()
-        dice2 = num()
-        roll = dice1 + dice2
-        print(f"You rolled {roll}")
-        if roll == 7 or roll == 11:
-            print("You win")
-            break
-        elif roll == 2 or roll == 3 or roll == 12:
-            print("You lose")
-            break
-        elif pp == 0:
-            pp = roll
-            print(f'your point is {pp}')
-        elif roll == pp:
-            print("You win!")
-            break
-        elif roll == 7:
-            print("You lose!")
-            break
-            
+    dice1 = randrange(1,6)
+    dice2 = randrange(1,6)
+    num = dice1 + dice2
+    print(f'you rolled {num}')
+    if(num == 7 or num == 11):
+        print("you won")
+    elif(num == 2 or num == 3 or num == 12):
+        print("you lose")
+    else:
+        print(f"your goal  is {num}")
+        i = num
+        aa = 0
+        while (i != aa) :
+            dice1 = randrange(1,6)
+            dice2 = randrange(1,6)
+            aa = dice1 + dice2
+            print(f"you rolled {aa}")
+            if(aa == 7):
+                print("you lose")
+                break 
+        if(aa != 7):
+            print("you won")
+
+
 game()
